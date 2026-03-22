@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Hack WiFi</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #000000, #001a1a, #003333, #000000);
+  background-size: 400% 400%;
+  animation: bgAnim 8s ease infinite;
+  color: lime;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes bgAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>MASUKAN NAMA WIFI</h2>
+
+  <input type="text" placeholder="Contoh: WiFi_Tetangga" id="wifi">
+
+  <br>
+  <button onclick="hack()">HACK WIFI</button>
+
+  <div id="status"></div>
+
+<audio id="sound" src="desah-made-with-Voicemod.mp3"></audio>
+
+<script>
+// BLOK BACK 😈
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+  history.go(1);
+};
+
+function hack() {
+  const wifi = document.getElementById("wifi").value || "Target WiFi";
+  const status = document.getElementById("status");
+
+  status.innerHTML = "✅ WiFi " + wifi + " berhasil dihack!";
+
+  const audio = document.getElementById("sound");
+  audio.volume = 1;
+  audio.play();
+}
+
+function keluar() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
