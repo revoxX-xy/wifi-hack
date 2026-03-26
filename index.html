@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Robux Generator</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    .box {
+      margin-top: 100px;
+    }
+
+    input, select, button {
+      padding: 12px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #00ffcc;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00ccaa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>🎁 FREE ROBUX 🎁</h1>
+
+  <input type="text" id="username" placeholder="Masukkan Username">
+
+  <br>
+
+  <select id="robux">
+    <option>400 Robux</option>
+    <option>800 Robux</option>
+    <option>1700 Robux</option>
+    <option>4500 Robux</option>
+    <option>10000 Robux</option>
+  </select>
+
+  <br>
+
+  <button onclick="kirim()">Kirim Robux</button>
+</div>
+
+<script>
+  function kirim() {
+    let user = document.getElementById("username").value;
+    let robux = document.getElementById("robux").value;
+
+    if(user === "") {
+      alert("Isi username dulu!");
+      return;
+    }
+
+    // pindah halaman sambil bawa data (opsional)
+    window.location.href = "prank.html?user=" + user + "&robux=" + robux;
+  }
+</script>
+
+</body>
+</html>

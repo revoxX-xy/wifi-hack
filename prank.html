@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Processing...</title>
+
+  <style>
+    body {
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: white;
+      font-family: Arial;
+    }
+
+    img {
+      width: 300px;
+      animation: shake 0.2s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(2px,2px); }
+      25% { transform: translate(-2px,-2px); }
+      50% { transform: translate(2px,-2px); }
+      75% { transform: translate(-2px,2px); }
+      100% { transform: translate(2px,2px); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>😂 KENA PRANK 😂</h1>
+
+<img src="21da6a941b118ce9bf8e44bf95b142b7.jpg">
+
+<audio id="sound" src="laugh.mp3"></audio>
+
+<script>
+  window.onload = function() {
+    let sound = document.getElementById("sound");
+
+    // paksa play setelah user sebelumnya klik tombol
+    sound.play().then(() => {
+      console.log("Audio jalan");
+    }).catch(() => {
+      // fallback kalau diblok
+      document.body.addEventListener("click", () => {
+        sound.play();
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
